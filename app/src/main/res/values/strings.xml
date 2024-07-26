@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">iwatchedthis</string>
+    <string name="merhabalar">Merhabalar</string>
+    <string name="arama">Arama</string>
+    <string name="rapidApiKey">aea7113063msh2d981946fc4f2a0p1c344cjsn4dc2f8435a74</string>
+    <string name="rapidHost">imdb-top-100-movies.p.rapidapi.com</string>
+</resources>
