@@ -3,7 +3,9 @@ package com.example.iwatchedthis.presentation.screens.home.composable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -24,6 +27,7 @@ import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -34,13 +38,12 @@ import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
-import com.example.iwatchedthis.presentation.screens.details.VerticalDiveder
 import com.example.iwatchedthis.ui.theme.HeiSeBlack
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomSearchBar(modifier: Modifier = Modifier) {
+fun CustomSearchBar(modifier: Modifier = Modifier, onDetailsButtonClick: (String) -> Unit) {
     val viewModel: CustomSearchBarViewModel = viewModel(factory = CustomSearchBarViewModelFactory())
     val queryText = viewModel.queryText.collectAsState().value
     val active = viewModel.isActive.collectAsState().value
@@ -80,6 +83,7 @@ fun CustomSearchBar(modifier: Modifier = Modifier) {
                         if (queryText.isNotEmpty()) {
                             viewModel.onQueryChange("")
                         } else {
+                            
                             viewModel.onActiveChange(false)
 
                         }
@@ -88,11 +92,16 @@ fun CustomSearchBar(modifier: Modifier = Modifier) {
             }
         }
     ) {
-        LazyColumn {
+        LazyColumn(
+            contentPadding = PaddingValues(bottom = 80.dp),
+        ) {
             items(movies.result.size) {
                 Card(
                     modifier = Modifier
                         .padding(10.dp)
+                        .clickable {
+                            onDetailsButtonClick(movies.result[it].imdbID)
+                        }
 
 
                 ) {
@@ -115,7 +124,12 @@ fun CustomSearchBar(modifier: Modifier = Modifier) {
                             Spacer(modifier = Modifier.height(5.dp))
                             Row {
                                 Text(text = movies.result[it].Type, color = Color.White)
-                                VerticalDiveder()
+                                Text(
+                                    text = "•",
+                                    color = Color.White,
+                                    style = MaterialTheme.typography.titleLarge,
+                                    modifier = Modifier.padding(horizontal = 5.dp)
+                                )
                                 Text(text = movies.result[it].Year, color = Color.White)
 
 
@@ -143,7 +157,12 @@ fun CustomImage(moviesUrl: String) {
         ).build()
     ).state
     if (imageState is AsyncImagePainter.State.Loading) {
-        Text(text = "Loading")
+        Box(
+            modifier = Modifier.size(100.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            CircularProgressIndicator()
+        }
     } else if (imageState is AsyncImagePainter.State.Success) {
         Image(
             painter = imageState.painter,

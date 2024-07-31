@@ -76,7 +76,7 @@ fun HomeScreen(onDetailsButtonClick: (String) -> Unit, moviesViewModel: MoviesVi
                 .padding(top = 10.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            CustomSearchBar()
+            CustomSearchBar(onDetailsButtonClick = onDetailsButtonClick)
             Spacer(modifier = Modifier.size(10.dp))
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
