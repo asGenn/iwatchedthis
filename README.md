@@ -51,10 +51,10 @@ This project follows the **MVVM (Model-View-ViewModel)** architecture pattern, w
 
 ## Usage
 
-### Main Screen
-- The main screen displays a list of movies.
+### Home Screen
+- The home screen displays a list of movies and searchbar.
 - Use the bottom navigation bar to switch between different sections.
-
+<img src="https://github.com/user-attachments/assets/58578b3e-550a-4611-a886-69273b7e0e74" alt="Main Screen" width="50%" height="50%"/>
 ![Main Screen](https://github.com/user-attachments/assets/58578b3e-550a-4611-a886-69273b7e0e74)
 
 ### Comments Screen
