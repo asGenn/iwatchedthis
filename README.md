@@ -1,4 +1,4 @@
-# I Watched This
+# Movie Tracker App with Kotlin and Jetpack Compose
 
 A mobile application to track movies you have watched and manage your favorite movies.
 
@@ -49,7 +49,7 @@ This project follows the **MVVM (Model-View-ViewModel)** architecture pattern, w
 4. Run the project:
     - Click on `Run` \> `Run 'app'` or press `Shift+F10`.
 
-## Usage
+## The App Screens
 
 ### Home Screen
 - The home screen displays a list of movies and searchbar.
