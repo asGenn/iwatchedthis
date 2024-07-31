@@ -54,26 +54,25 @@ This project follows the **MVVM (Model-View-ViewModel)** architecture pattern, w
 ### Home Screen
 - The home screen displays a list of movies and searchbar.
 - Use the bottom navigation bar to switch between different sections.
-<img src="https://github.com/user-attachments/assets/58578b3e-550a-4611-a886-69273b7e0e74" alt="Main Screen" width="50%" height="50%"/>
-![Main Screen](https://github.com/user-attachments/assets/58578b3e-550a-4611-a886-69273b7e0e74)
+<img src="https://github.com/user-attachments/assets/58578b3e-550a-4611-a886-69273b7e0e74" alt="Main Screen" width="25%" height="25%"/>
+
 
 ### Comments Screen
 - You can see your comments for movies.
 - You can delete comments on the screen.
+<img src="https://github.com/user-attachments/assets/a43b5a47-1501-4f7d-9590-223777115baa" alt="Comments Screen" width="25%" height="25%"/>
 
-![Comments Screen](https://github.com/user-attachments/assets/a43b5a47-1501-4f7d-9590-223777115baa)
 
 ### Movie Details
 - Click on a movie to view its details.
 - Add or remove the movie from your favorites.
+<img src="https://github.com/user-attachments/assets/38687896-a464-4048-b351-a0bc0322937e" alt="MovieDetails Screen" width="25%" height="25%"/>
 
-![Movie Details](https://github.com/user-attachments/assets/38687896-a464-4048-b351-a0bc0322937e)
 
 ### Profile
 - Manage your user profile.
 - View and edit your favorite and watched movies.
-
-![Profile](https://github.com/user-attachments/assets/78a03ddf-b734-42aa-b8f5-964540ef94c6)
+<img src="https://github.com/user-attachments/assets/78a03ddf-b734-42aa-b8f5-964540ef94c6" alt="Profile Screen" width="25%" height="25%"/>
 
 ## Contributing
 
