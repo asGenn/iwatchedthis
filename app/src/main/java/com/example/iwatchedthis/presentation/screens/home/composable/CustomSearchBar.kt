@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
@@ -45,6 +46,7 @@ fun CustomSearchBar(modifier: Modifier = Modifier) {
     val active = viewModel.isActive.collectAsState().value
     val movies = viewModel.movies.collectAsState().value
     SearchBar(
+        shape = RoundedCornerShape(16.dp),
         query = queryText,
         onQueryChange = {
             viewModel.onQueryChange(it)

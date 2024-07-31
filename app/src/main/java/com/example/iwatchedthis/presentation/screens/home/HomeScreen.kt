@@ -71,7 +71,9 @@ fun HomeScreen(onDetailsButtonClick: (String) -> Unit, moviesViewModel: MoviesVi
         }
     } else {
         Column(
-            modifier = Modifier.background(HeiSeBlack),
+            modifier = Modifier
+                .background(HeiSeBlack)
+                .padding(top = 10.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CustomSearchBar()
